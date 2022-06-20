@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+    <head>
+        <title>CS 421 lab02</title>
+        <script type ="text/javascript">
+            var firstNumber;
+            var secondNumber;
+            var firstValue=0;
+            var secondValue;
+            var operation='equals';
+            function numberFunction(value) {
+                firstNumber=value;
+                secondNumber=document.getElementById("textValue").value;
+                document.getElementById("textValue").value=secondNumber+firstNumber;
+            }
+            function operationFunction(value) {
+                if(value=='plus') {
+                    firstValue=document.getElementById("textValue").value;
+                    document.getElementById("textValue").value="";
+                    operation=value;
+                }
+                else if(value=='minus') {
+                    firstValue=document.getElementById("textValue").value;
+                    document.getElementById("textValue").value="";
+                    operation=value;
+                }
+                else if(value=='mult') {
+                    firstValue=document.getElementById("textValue").value;
+                    document.getElementById("textValue").value="";
+                    operation=value;
+                }
+                else if(value=='divide') {
+                    firstValue=document.getElementById("textValue").value;
+                    document.getElementById("textValue").value="";
+                    operation=value;
+                }
+                else if(value=='clear') {
+                    firstValue=document.getElementById("textValue").value;
+                    document.getElementById("textValue").value="";
+                    operation=value;
+                }
+                else {
+                    secondValue=document.getElementById("textValue").value;
+                    document.getElementById("textValue").value="";
+                    switch(operation) {
+                        case "plus": 
+                            sum=parseInt(firstValue)+parseInt(secondValue);
+                            document.getElementById("textValue").value=sum;
+                            break;
+                    }
+                    switch(operation) {
+                        case "minus": 
+                            difference=parseInt(firstValue)-parseInt(secondValue);
+                            document.getElementById("textValue").value=difference;
+                            break;
+                    }
+                    switch(operation) {
+                        case "mult": 
+                            product=parseInt(firstValue)*parseInt(secondValue);
+                            document.getElementById("textValue").value=product;
+                            break;
+                    }
+                    switch(operation) {
+                        case "divide": 
+                            quotient=parseInt(firstValue)/parseInt(secondValue);
+                            document.getElementById("textValue").value=quotient;
+                            break;
+                    }
+                    switch(operation) {
+                        case "clear": 
+                            clear="";
+                            document.getElementById("textValue").value=clear;
+                            break;
+                    }
+                    //left in case wanted to add negative button
+                    // switch(operation) {
+                    //     case "negative": 
+                    //         negative=parseInt(firstValue)*-1;
+                    //         document.getElementById("textValue").value=negative;
+                    //         break;
+                    // }
+                }
+            }
+        </script>
+    </head>
+    <body bgcolor="#F9F6F0" style="font-family:monospace;font-size:large;font-weight:bolder;">
+        <left><h1>TI-1337 (CS 421 lab02)</h1></left>
+        <table style="background-color:#b6e2d39c" width="250px" cellspacing="6px" cellpadding="15px">
+            <tr>
+                <td colspan="15" style="border:0px">
+                    <input type="text" id="textValue" style="width:300px;height:30px;font-size:25px" dir="ltr">
+                </td>
+
+            </tr>      
+            <tr>
+                <td style="background-color:#FFFDD0" onclick="numberFunction (7);">7</td>
+                <td style="background-color:#FFFDD0" onclick="numberFunction (8)">8</td>
+                <td style="background-color:#FFFDD0" onclick="numberFunction (9)">9</td>
+                <td style="background-color:#FFFDD0" onclick="operationFunction ('plus');">+</td>
+            </tr>
+            <tr>
+                <td style="background-color:#FFFDD0" onclick="numberFunction (4)">4</td>
+                <td style="background-color:#FFFDD0" onclick="numberFunction (5)">5</td>
+                <td style="background-color:#FFFDD0" onclick="numberFunction (6)">6</td>
+                <td style="background-color:#FFFDD0" onclick="operationFunction ('minus');">–</td>
+            </tr>
+            <tr>
+                <td style="background-color:#FFFDD0" onclick="numberFunction (1)">1</td>
+                <td style="background-color:#FFFDD0" onclick="numberFunction (2)">2</td>
+                <td style="background-color:#FFFDD0" onclick="numberFunction (3)">3</td>
+                <td style="background-color:#FFFDD0" onclick="operationFunction ('mult');">×</td>
+            </tr>
+            <tr>
+                <td style="background-color:#FFFDD0" onclick="operationFunction ('clear');">AC</td>
+                <td style="background-color:#FFFDD0" onclick="numberFunction (0)">0</td>
+                <td style="background-color:#FFFDD0" onclick="operationFunction ('equals');">=</td>
+                <td style="background-color:#FFFDD0" onclick="operationFunction ('divide');">÷</td>
+            </tr>
+        </table>
+        
+    </body>
+</html>
